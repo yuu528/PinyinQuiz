@@ -1,0 +1,16 @@
+{
+	"prompt_mode_selection": "Please select game mode (1: Han to Pinyin Quiz, 2: Pinyin to Han Quiz, 3: Mix, 4: Show list): ",
+	"prompt_pinyin": "Pinyin: ",
+	"prompt_han": "Han: ",
+	"msg_invalid_pinyin": "Invalid pinyin.",
+	"msg_your_answer": "Your answer: ",
+	"msg_correct": "Correct!!",
+	"msg_wrong": "Wrong!!",
+	"msg_answer": "Answer: ",
+	"msg_questions": "List of questions: ",
+	"msg_wrong_selection": "Invalid mode selected",
+	"msg_usage": "node index.js <question file>",
+	"msg_howto_input_pinyin": "Input tones by number. Neutral tone is 0. Use v for ü. (ex. xuésheng→xue2sheng0, lǚxíng→lv3xing2)",
+	"msg_pinyin_tone": "1st Tone: ā, 2nd Tone: á, 3rd Tone: ǎ, 4th Tone: à",
+	"msg_number_of_correct": "Number of correct answers: "
+}

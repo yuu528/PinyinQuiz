@@ -1,0 +1,16 @@
+{
+	"prompt_mode_selection": "モードを選択してください (1: 漢字→ピンインクイズ, 2: ピンイン→漢字クイズ, 3: 両方, 4: 問題リストを表示): ",
+	"prompt_pinyin": "ピンイン: ",
+	"prompt_han": "漢字: ",
+	"msg_invalid_pinyin": "正しくないピンインの表現です",
+	"msg_your_answer": "あなたの答え: ",
+	"msg_correct": "正解!!",
+	"msg_wrong": "不正解!!",
+	"msg_answer": "正しい答え: ",
+	"msg_questions": "問題リスト: ",
+	"msg_wrong_selection": "間違ったモード番号が選択されました",
+	"msg_usage": "node index.js <question file>",
+	"msg_howto_input_pinyin": "ピンインは声調を数字で入力してください。軽声は0としてください。üはvとしてください。(例: xuésheng→xue2sheng0, lǚxíng→lv3xing2)",
+	"msg_pinyin_tone": "1声: ā, 2声: á, 3声: ǎ, 4声: à",
+	"msg_number_of_correct": "正解数: "
+}

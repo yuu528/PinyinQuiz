@@ -1,0 +1,23 @@
+{
+  "name": "pinyinquiz",
+  "version": "1.0.0",
+  "description": "Pinyin quiz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuu528/PinyinQuiz.git"
+  },
+  "author": "yuu528",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuu528/PinyinQuiz/issues"
+  },
+  "homepage": "https://github.com/yuu528/PinyinQuiz#readme",
+  "dependencies": {
+    "pinyin": "^3.0.0-alpha.4",
+    "readline-sync": "^1.4.10"
+  }
+}
