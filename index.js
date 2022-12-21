@@ -1,6 +1,6 @@
 const fs = require('fs');
 const readlineSync = require('readline-sync');
-const pinyin = require('pinyin');
+const pinyin = require('node-pinyin');
 const locale = require('./util/locale.js');
 const logger = require('./util/logger.js');
 
@@ -39,7 +39,7 @@ fileText.split(/\r\n|\n/).forEach(line => {
 		line.replace(/#.+/).trim();
 		let lineData = line.split(':');
 		if(lineData.length < 2) {
-			lineData[1] = pinyin.pinyin(lineData[0]).map(arr => arr.join('')).join('');
+			lineData[1] = pinyin(lineData[0]).map(arr => arr.join('')).join('');
 		}
 		questions.push(lineData);
 	}
@@ -179,7 +179,7 @@ function pinyinToHanQuiz() {
 	console.log('Q: ' + questions[index][1]);
 	let input = readlineSync.question(locale.get('prompt_han'));
 	if(input == questions[index][0] ||
-		pinyin.pinyin(input).map(arr => arr.join('')).join('') == questions[index][1]) {
+		pinyin(input).map(arr => arr.join('')).join('') == questions[index][1]) {
 		console.log(locale.get('msg_correct'));
 		return true;
 	} else {

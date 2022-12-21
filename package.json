@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/yuu528/PinyinQuiz#readme",
   "dependencies": {
-    "pinyin": "^3.0.0-alpha.4",
+    "node-pinyin": "^0.2.3",
     "readline-sync": "^1.4.10"
   }
 }
