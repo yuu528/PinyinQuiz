@@ -18,8 +18,8 @@
 
 ## Environment
 テスト環境
- - Ubuntu 20.04.4 LTS (Windows 11 WSL2)
- - Node.js v16.16.0
+ - Ubuntu 20.04.4 LTS (Windows 11 WSL2), Node.js v16.16.0
+ - Termux 0.118.0 (Android 12 aarch64), Node.js v18.12.1
 
 ## Dependencies
  - node-pinyin@0.2.3
