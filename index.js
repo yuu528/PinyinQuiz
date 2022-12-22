@@ -119,7 +119,6 @@ function hanToPinyinQuiz() {
 	var tones = rawAnswer.replace(/[^0-4]/g, '').split('');
 	rawAnswer.split(/[0-4]/).forEach((noTonePinyin, n) => {
 		if(!invalid && noTonePinyin != '') {
-		console.log(noTonePinyin + ' ' + tones[n]);
 			var tmpIndex, tmpIndex2;
 			if(tones[n] == 0) {
 				output += noTonePinyin;
