@@ -17,6 +17,8 @@ const toneSymbols = {
 
 process.stdin.setEncoding('utf8');
 
+locale.setDefaultLocale(language);
+
 // check args
 if(process.argv.length < 2) {
 	printUsage();
@@ -27,8 +29,6 @@ if(!fs.existsSync(process.argv[2])) {
 	printUsage();
 	process.exit();
 }
-
-locale.setDefaultLocale(language);
 
 let fileText = fs.readFileSync(process.argv[2], 'utf8');
 var questions = [];
