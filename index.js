@@ -59,7 +59,7 @@ switch(input) {
 			}
 			questionCount++;
 			console.log(locale.get('msg_number_of_correct') +
-				corrects + '/' + questionCount + '(' + corrects / questionCount * 100 + ')');
+				corrects + '/' + questionCount + '(' + Math.round(corrects / questionCount * 100) + '%)');
 		}
 		break;
 
@@ -70,7 +70,7 @@ switch(input) {
 			}
 			questionCount++;
 			console.log(locale.get('msg_number_of_correct') +
-				corrects + '/' + questionCount + '(' + corrects / questionCount * 100 + ')');
+				corrects + '/' + questionCount + '(' + Math.round(corrects / questionCount * 100) + '%)');
 		}
 		break;
 
@@ -87,7 +87,7 @@ switch(input) {
 			}
 			questionCount++;
 			console.log(locale.get('msg_number_of_correct') +
-				corrects + '/' + questionCount + '(' + corrects / questionCount * 100 + ')');
+				corrects + '/' + questionCount + '(' + Math.round(corrects / questionCount * 100) + '%)');
 		}
 		break;
 
