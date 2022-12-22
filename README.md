@@ -22,5 +22,5 @@
  - Node.js v16.16.0
 
 ## Dependencies
- - pinyin 3.0.0-alpha.4
- - readline-sync 1.4.10
+ - node-pinyin@0.2.3
+ - readline-sync@1.4.10
