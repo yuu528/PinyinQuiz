@@ -15,6 +15,9 @@ const toneSymbols = {
 	v: ['ǖ', 'ǘ', 'ǚ', 'ǜ', 'ü']
 };
 
+globalIndex=0
+globalIndex2=0
+
 process.stdin.setEncoding('utf8');
 
 locale.setDefaultLocale(language);
@@ -30,6 +33,8 @@ if(!fs.existsSync(process.argv[2])) {
 	process.exit();
 }
 
+indexArray = [];
+
 let fileText = fs.readFileSync(process.argv[2], 'utf8');
 var questions = [];
 fileText.split(/\r\n|\n/).forEach(line => {
@@ -42,8 +47,12 @@ fileText.split(/\r\n|\n/).forEach(line => {
 			lineData[1] = pinyin(lineData[0]).map(arr => arr.join('')).join('');
 		}
 		questions.push(lineData);
+		indexArray.push(globalIndex2);
+		globalIndex2++;
 	}
 });
+indexArray = shuffle(indexArray);
+globalIndex2 = questions.length-1;
 
 // mode selection
 let input = readlineSync.question(locale.get('prompt_mode_selection'));
@@ -110,7 +119,11 @@ function replaceCharPos(str, chara, pos) {
 }
 
 function hanToPinyinQuiz() {
-	let index = Math.floor(Math.random() * questions.length);
+	let index = indexArray[globalIndex++];
+	if(globalIndex > questions.length - 1) {
+		globalIndex = 0;
+		indexArray = shuffle(indexArray);
+	}
 	console.log('Q: ' + questions[index][0]);
 	let rawAnswer = readlineSync.question(locale.get('prompt_pinyin'));
 	// convert input to pinyin
@@ -174,7 +187,11 @@ function hanToPinyinQuiz() {
 }
 
 function pinyinToHanQuiz() {
-	let index = Math.floor(Math.random() * questions.length);
+	let index = indexArray[globalIndex2--];
+	if(globalIndex2 < 0) {
+		globalIndex2 = questions.length - 1;
+		indexArray = shuffle(indexArray);
+	}
 	console.log('Q: ' + questions[index][1]);
 	let input = readlineSync.question(locale.get('prompt_han'));
 	if(input == questions[index][0] ||
@@ -186,4 +203,13 @@ function pinyinToHanQuiz() {
 			locale.get('msg_answer') + questions[index][0]);
 		return false;
 	}
+}
+
+function shuffle([...array]) {
+	for (let i = array.length - 1; i >= 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+	console.log(array);
+	return array;
 }
