@@ -177,10 +177,10 @@ function hanToPinyinQuiz() {
 	}
 
 	if(output == questions[index][1]) {
-		console.log(locale.get('msg_correct'));
+		console.log('\x1b[32m' + locale.get('msg_correct') + '\x1b[0m');
 		return true;
 	} else {
-		console.log(locale.get('msg_wrong') + ' ' +
+		console.log('\x1b[31m' + locale.get('msg_wrong') + '\x1b[0m ' +
 			locale.get('msg_answer') + questions[index][1]);
 		return false;
 	}
@@ -196,10 +196,10 @@ function pinyinToHanQuiz() {
 	let input = readlineSync.question(locale.get('prompt_han'));
 	if(input == questions[index][0] ||
 		pinyin(input).map(arr => arr.join('')).join('') == questions[index][1]) {
-		console.log(locale.get('msg_correct'));
+		console.log('\x1b[32m' + locale.get('msg_correct') + '\x1b[0m');
 		return true;
 	} else {
-		console.log(locale.get('msg_wrong') + ' ' +
+		console.log('\x1b[31m' + locale.get('msg_wrong') + '\x1b[0m ' +
 			locale.get('msg_answer') + questions[index][0]);
 		return false;
 	}
